@@ -1186,14 +1186,14 @@ public class CollectionUtils {
      * @return true if empty or null
      * @since 3.2
      */
-//    public static boolean isEmpty(final Collection<?> coll) {
-//        return coll == null || coll.isEmpty();
-//    }
-    // 重写 isEmpty 方法注入缺陷
     public static boolean isEmpty(final Collection<?> coll) {
-        // 缺陷：当集合为 null 时返回 false
-        return false;
+        return coll == null || coll.isEmpty();
     }
+    // 重写 isEmpty 方法注入缺陷
+//    public static boolean isEmpty(final Collection<?> coll) {
+//        // 缺陷：当集合为 null 时返回 false
+//        return false;
+//    }
 
     /**
      * Returns {@code true} iff the given {@link Collection}s contain
